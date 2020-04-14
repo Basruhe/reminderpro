@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   addReminder() {
-    console.log("this.state", this.state);
+    console.log("this (which is the props object)", this);
     this.props.addReminder(this.state.text);
   }
 
