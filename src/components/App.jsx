@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+// import { bindActionCreators } from "redux";
 import { addReminder } from "../actions";
 
 class App extends Component {
@@ -61,12 +61,14 @@ class App extends Component {
   }
 }
 
+// Now, we need to mapstatetoprops so that we can update the redux state with our action and recognize it in our UI.
 // function mapStateToProps(state) {
 //   console.log("state", state);
 // }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addReminder }, dispatch);
-}
+// This is now redundant, since addreminder is also added to the export default connect. This is a shortcut. Otherwise you'd need to write an actual mapdispatchtoprops like below, and import bindactioncreators as well
+// function mapDispatchToProps(dispatch) {
+//   return bindActionCreators({ addReminder }, dispatch);
+// }
 
 export default connect(null, { addReminder })(App);
