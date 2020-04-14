@@ -12,16 +12,32 @@ class App extends Component {
   }
 
   addReminder() {
-    console.log("this", this);
     this.props.addReminder(this.state.text);
   }
+
+  // renderReminders() {
+  //   const { reminders } = this.props;
+  //   // this is not working; as nothing is (somehow) ever added to the reminders in the reducers index.js
+  //   console.log("reminders as state:", reminders);
+  //   return (
+  //     <ul className="list-group col-sm-4">
+  //       {reminders.map(reminder => {
+  //         return (
+  //           <li key={reminder.id} className="list-group-item">
+  //             <div>{reminder.text}</div>
+  //           </li>
+  //         );
+  //       })}
+  //     </ul>
+  //   );
+  // }
 
   render() {
     return (
       <div className="App">
         <div className="title">Reminder PRO!</div>
 
-        <div className="form-inline">
+        <div className="form-inline reminder-form">
           <div className="form-group">
             <input
               className="form-control"
@@ -29,6 +45,7 @@ class App extends Component {
               onChange={event => this.setState({ text: event.target.value })}
             />
           </div>
+          {/* {this.renderReminders()} */}
           <button
             type="button"
             className="btn btn-success"
@@ -50,4 +67,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ addReminder }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, { addReminder })(App);
