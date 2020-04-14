@@ -12,6 +12,7 @@ class App extends Component {
   }
 
   addReminder() {
+    console.log("this.state", this.state);
     this.props.addReminder(this.state.text);
   }
 
@@ -60,12 +61,12 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  console.log("state", state);
-}
+// function mapStateToProps(state) {
+//   console.log("state", state);
+// }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ addReminder }, dispatch);
 }
 
-export default connect(mapStateToProps, { addReminder })(App);
+export default connect(null, { addReminder })(App);
