@@ -23,7 +23,8 @@ class App extends Component {
         {reminders.map((reminder) => {
           return (
             <li key={reminder.id} className="list-group-item">
-              <div>{reminder.text}</div>
+              <div className="list-item">{reminder.text}</div>
+              <div className="list-item delete-button">&#x2715;</div>
             </li>
           );
         })}
@@ -45,7 +46,7 @@ class App extends Component {
               onChange={(event) => this.setState({ text: event.target.value })}
             />
           </div>
-          {this.renderReminders()}
+
           <button
             type="button"
             className="btn btn-success"
@@ -54,6 +55,7 @@ class App extends Component {
             Add reminder
           </button>
         </div>
+        {this.renderReminders()}
       </div>
     );
   }
