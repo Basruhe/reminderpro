@@ -10,4 +10,11 @@ export const addReminder = (text) => {
   return action;
 };
 
-export const deleteReminder = (id) => {};
+export const deleteReminder = (id) => {
+  const action = {
+    type: DELETE_REMINDER,
+    id,
+  };
+  console.log("deleting in actions", action);
+  return action;
+};
