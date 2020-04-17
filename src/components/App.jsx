@@ -8,6 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       text: "",
+      dueDate: "",
     };
   }
 
@@ -56,6 +57,14 @@ class App extends Component {
               placeholder="I have to.."
               onChange={(event) => this.setState({ text: event.target.value })}
             />
+            <input
+              className="form-control"
+              placeholder="by..."
+              type="datetime-local"
+              onChange={(event) =>
+                this.setState({ dueDate: event.target.value })
+              }
+            ></input>
           </div>
 
           <button

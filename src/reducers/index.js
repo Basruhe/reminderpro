@@ -22,7 +22,6 @@ const reminders = (state = [], action) => {
       return reminders;
     case DELETE_REMINDER:
       reminders = removeById(state, action.id);
-      return reminders;
       console.log("reminders minus deleted", reminders);
       return reminders;
     default:
