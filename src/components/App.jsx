@@ -12,9 +12,12 @@ class App extends Component {
     };
   }
 
+  // to do: add error handling to erroneous or empty dates.
+  // to do: display date when adding reminders
   addReminder() {
+    console.log("this.state.dueDate contains: ", this.state.dueDate);
     console.log("this (which is the props object)", this);
-    this.props.addReminder(this.state.text);
+    this.props.addReminder(this.state.text, this.state.dueDate);
   }
 
   deleteReminder(id) {
