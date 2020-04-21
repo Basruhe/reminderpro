@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+// no longer required, this is all wrapped into the default export down at the bottom
 // import { bindActionCreators } from "redux";
 import { addReminder, deleteReminder } from "../actions";
 
@@ -13,7 +14,6 @@ class App extends Component {
   }
 
   // to do: add error handling to erroneous or empty dates.
-  // to do:
   // to do: display date when adding reminders
   addReminder() {
     console.log("this.state.dueDate contains: ", this.state.dueDate);
