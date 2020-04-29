@@ -97,5 +97,4 @@ function mapStateToProps(state) {
 // function mapDispatchToProps(dispatch) {
 //   return bindActionCreators({ addReminder }, dispatch);
 // }
-
 export default connect(mapStateToProps, { addReminder, deleteReminder })(App);
