@@ -1,4 +1,4 @@
-import { ADD_REMINDER, DELETE_REMINDER } from "../constants";
+import { ADD_REMINDER, DELETE_REMINDER, CLEAR_REMINDERS } from "../constants";
 // to do: figure out whether its necessary to have a constants.js
 // try removing the constants.js and add the imported constants to this file.
 
@@ -20,4 +20,10 @@ export const deleteReminder = (id) => {
   };
   console.log("deleting in actions", action);
   return action;
+};
+
+export const clearReminders = () => {
+  return {
+    type: CLEAR_REMINDERS,
+  };
 };
