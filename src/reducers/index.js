@@ -4,7 +4,7 @@ import { bake_cookie, read_cookie } from "sfcookies";
 const reminder = (action) => {
   let { text, dueDate } = action;
   return {
-    // text: action.text,
+    // before es6 shorthand: text: action.text,
     id: Math.random(),
     text,
     dueDate,

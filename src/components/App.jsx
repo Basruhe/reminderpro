@@ -7,7 +7,8 @@ import { addReminder, deleteReminder, clearReminders } from "../actions";
 // import Moment from "react-moment";
 // Unfinished: moment and react-moment do not work. Should be able to convert the js dates into a more readable format, or use it as a countdown. But the import fails (moment has a file structure, cant grab the right component apparently. Other options?)
 
-// const dateToFormat = "1976-04-19T12:59-0500";
+// TODO List:
+// add error handling to erroneous or empty dates.
 
 class App extends Component {
   constructor(props) {
@@ -18,8 +19,6 @@ class App extends Component {
     };
   }
 
-  // to do: add error handling to erroneous or empty dates.
-  // to do: display date when adding reminders
   addReminder() {
     console.log("this.state.dueDate contains: ", this.state.dueDate);
     console.log("this (which is the props object)", this);
