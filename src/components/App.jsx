@@ -3,7 +3,11 @@ import { connect } from "react-redux";
 // no longer required, this is all wrapped into the default export down at the bottom
 // import { bindActionCreators } from "redux";
 import { addReminder, deleteReminder } from "../actions";
-import moment from "moment";
+// import moment from "moment";
+// import Moment from "react-moment";
+// Unfinished: moment and react-moment do not work. Should be able to convert the js dates into a more readable format, or use it as a countdown. But the import fails (moment has a file structure, cant grab the right component apparently. Other options?)
+
+// const dateToFormat = "1976-04-19T12:59-0500";
 
 class App extends Component {
   constructor(props) {
@@ -38,7 +42,10 @@ class App extends Component {
               <div className="list-item">
                 <div>{reminder.text}</div>
                 <div>
-                  <em>{moment(new Date(reminder.dueDate)).fromNow()}</em>
+                  <em>
+                    {reminder.dueDate}
+                    {/* <Moment>{reminder.dueDate}</Moment> */}
+                  </em>
                 </div>
               </div>
               <div
