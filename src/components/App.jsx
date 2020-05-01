@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 // no longer required, this is all wrapped into the default export down at the bottom
 // import { bindActionCreators } from "redux";
-import { addReminder, deleteReminder } from "../actions";
+import { addReminder, deleteReminder, clearReminders } from "../actions";
 // import moment from "moment";
 // import Moment from "react-moment";
 // Unfinished: moment and react-moment do not work. Should be able to convert the js dates into a more readable format, or use it as a countdown. But the import fails (moment has a file structure, cant grab the right component apparently. Other options?)
@@ -93,6 +93,13 @@ class App extends Component {
           </button>
         </div>
         {this.renderReminders()}
+
+        <div
+          className="btn btn-danger"
+          onClick={() => this.props.clearReminders()}
+        >
+          Clear Reminders
+        </div>
       </div>
     );
   }
@@ -110,4 +117,8 @@ function mapStateToProps(state) {
 // function mapDispatchToProps(dispatch) {
 //   return bindActionCreators({ addReminder }, dispatch);
 // }
-export default connect(mapStateToProps, { addReminder, deleteReminder })(App);
+export default connect(mapStateToProps, {
+  addReminder,
+  deleteReminder,
+  clearReminders,
+})(App);
