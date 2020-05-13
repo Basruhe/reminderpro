@@ -8,6 +8,7 @@ import "./index.css";
 
 const store = createStore(reducer);
 
+// to do : breakdown
 ReactDOM.render(
   <Provider store={store}>
     <App />
